@@ -17,7 +17,7 @@ public class ServiceLocator
       }
    }
    
-   public bool TryGetService <T>(out T service)
+   public bool TryGetService<T>(out T service)
    {
       service = default;
       if (_services.TryGetValue(typeof(T), out var value))
@@ -28,6 +28,17 @@ public class ServiceLocator
     
       Debug.Log($"Error: Service not found: {typeof(T)}");
       return false;
+   }
+   
+   public T GetService<T>()
+   {
+      if (_services.TryGetValue(typeof(T), out var value))
+         return (T)value;
+      
+      if (typeof(T) == typeof(ILoggerService))
+         return (T)(object) new NullLoggerService();
+      
+      return default;
    }
    
    // Register service

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public interface IloggerService
+public interface ILoggerService
 {
   public void LogMessage(string message);
 }
 
-public class LoggerService : IloggerService
+public class LoggerService : ILoggerService
 {
   public void LogMessage(string message)
   {
@@ -13,3 +13,10 @@ public class LoggerService : IloggerService
   }
 }
 
+public class NullLoggerService : ILoggerService
+{
+  public void LogMessage(string message)
+  {
+    Debug.Log("Logger service is not available");
+  }
+}

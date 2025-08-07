@@ -63,8 +63,10 @@ namespace MovableObject
         {
             scoreTMP.SetText($"{score}");
         
-            if (ServiceLocator.Instance.TryGetService<IloggerService>(out var loggerService))
-                loggerService.LogMessage($"Score Updated! {score}");
+            // if (ServiceLocator.Instance.TryGetService<ILoggerService>(out var loggerService))
+            //     loggerService.LogMessage($"Score Updated! {score}");
+
+            ServiceLocator.Instance.GetService<ILoggerService>().LogMessage($"Score Updated! {score}");
         }
     }
 }

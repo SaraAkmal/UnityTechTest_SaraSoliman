@@ -12,6 +12,6 @@ public class GameBootstrap : MonoBehaviour
 
    private void Initialize()
    {
-      ServiceLocator.Instance.Provide<IloggerService>(new LoggerService());
+      ServiceLocator.Instance.Provide<ILoggerService>(new LoggerService());
    }
 }
