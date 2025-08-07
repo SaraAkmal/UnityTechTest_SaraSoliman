@@ -26,6 +26,7 @@ public class ServiceLocator
          return true;
       }
     
+      Debug.Log($"Error: Service not found: {typeof(T)}");
       return false;
    }
    
