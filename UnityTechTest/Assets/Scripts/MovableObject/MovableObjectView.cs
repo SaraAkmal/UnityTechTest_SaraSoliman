@@ -5,8 +5,9 @@ namespace MovableObject
 {
     public class MovableObjectView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI scoreTMP;
-        [SerializeField] private Rigidbody movableRb;
+        // set‑only properties for position and score
+        [field: SerializeField] private TextMeshProUGUI scoreTMP;
+        [field: SerializeField] private Rigidbody movableRb;
 
         private float _maxDistance;
         private bool _isInitialized;
